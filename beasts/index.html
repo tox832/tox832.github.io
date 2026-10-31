@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>评论成精 · Comment Beasts</title>
+<meta name="description" content="把你的 B 站评论区，变成一场回合制群架。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="bg-glow" aria-hidden="true"></div>
+<div class="bg-grid" aria-hidden="true"></div>
+
+<header class="hud">
+  <div class="logo">
+    <span class="logo-cn">评论成精</span>
+    <span class="logo-en">COMMENT&nbsp;BEASTS</span>
+  </div>
+  <p class="tagline">把你的 B 站评论区，变成一场回合制群架。</p>
+</header>
+
+<main>
+  <section id="setup" class="panel">
+    <div class="panel-head">
+      <h2><b>01</b> 投放评论区</h2>
+      <div class="chips">
+        <button id="btn-sample" class="btn mini ghost" type="button">用示例评论区</button>
+        <button id="btn-clear" class="btn mini ghost" type="button">清空</button>
+      </div>
+    </div>
+    <textarea id="input" spellcheck="false" placeholder="一行一条评论，越典型的越好看：&#10;难道就我觉得这期不行？&#10;前排出售瓜子饮料&#10;其实吧，本质上这是常识&#10;老婆！！！！"></textarea>
+    <div class="panel-foot">
+      <span id="hint" class="hint">取战力最高的 5 条上场 · 纯本地判定 · 不上传任何内容</span>
+      <button id="btn-fight" class="btn primary" type="button">▶ 开战</button>
+    </div>
+  </section>
+
+  <section id="arena" class="panel hidden">
+    <div class="versus">
+      <div class="side">
+        <h3 class="side-title me">我方评论区</h3>
+        <div class="cards" id="cards-me"></div>
+      </div>
+      <div class="vs">VS</div>
+      <div class="side">
+        <h3 class="side-title foe">隔壁评论区</h3>
+        <div class="cards" id="cards-foe"></div>
+      </div>
+    </div>
+
+    <div id="banner" class="banner"></div>
+
+    <div class="controls">
+      <button id="btn-replay" class="btn ghost" type="button">↻ 重播</button>
+      <button id="btn-save" class="btn primary" type="button">⬇ 保存战力榜长图</button>
+      <label class="speed">演出速度
+        <input type="range" id="speed" min="1" max="3" step="1" value="2">
+      </label>
+    </div>
+
+    <div id="log" class="log" aria-live="polite"></div>
+  </section>
+</main>
+
+<footer class="foot">
+  <span>评论成精 · 本地规则引擎 · 把评论区当食材，不当数据</span>
+  <a href="https://tox832.github.io/">tox832.github.io</a>
+</footer>
+
+<canvas id="shareCanvas" class="hidden"></canvas>
+<script src="game.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
