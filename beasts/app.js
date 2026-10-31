@@ -116,7 +116,7 @@
 
     $('hint').textContent = `解析到 ${parsed.length} 条评论，${mine.length} 只出战`;
     play();
-    $('arena').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    $('arena').scrollIntoView({ block: 'start' });
   }
 
   function play() {
